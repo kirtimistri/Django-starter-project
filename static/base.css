@@ -1,0 +1,164 @@
+[x-cloak] { 
+    display: none !important; 
+}
+
+h1 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+h2 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+p {
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.button, button, [type='submit'], [type='button'] {
+    background-color: #4f46e5; /* bg-indigo-600 */
+    color: white; /* text-white */
+    font-weight: 700; /* font-bold */
+    padding: 1rem 1.5rem; /* px-6 py-4 */
+    display: inline-block;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    transition: all 0.2s; /* transition-all */
+    cursor: pointer;
+}
+
+.button:hover, button:hover, [type='submit']:hover, [type='button']:hover {
+    background-color: #4338ca; /* bg-indigo-700 */
+}
+
+.button:active, button:active, [type='submit']:active, [type='button']:active {
+    transform: scale(0.95); /* scale-95 */
+}
+
+.button.alert, button.alert {
+    background-color: #b91c1c; /* bg-red-700 */
+}
+
+.button.alert:hover, button.alert:hover {
+    background-color: #dc2626; /* bg-red-600 */
+}
+
+.button-red {
+    background-color: #ef4444 !important; /* !bg-red-500 */
+}
+
+.button-red:hover {
+    background-color: #dc2626 !important; /* hover:!bg-red-600 */
+}
+
+.button-gray {
+    background-color: #d1d5db !important; /* !bg-gray-300 */
+}
+
+.button-gray:hover {
+    background-color: #c3c9d0 !important; /* hover:!bg-[#c3c9d0] */
+}
+
+.navitems > li > a {
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    gap: 0.5rem; /* gap-2 */
+    height: 3rem; /* h-12 */
+    padding: 0 1rem; /* px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: background-color 0.2s; /* hover:bg-gray-700 */
+}
+
+.navitems > li > a:hover {
+    background-color: #374151; /* hover:bg-gray-700 */
+}
+
+.hoverlist > * {
+    background-color: #f3f4f6; /* hover:bg-gray-100 */
+    border-radius: 0.25rem; /* rounded-md */
+    transition: background-color 0.15s; /* duration-150 */
+}
+
+.hoverlist > * > a {
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    padding: 0.5rem; /* p-2 */
+}
+
+.highlight {
+    background-color: #e0e7ff !important; /* !bg-indigo-100 */
+}
+
+.allauth content a {
+    text-decoration: underline; /* underline */
+    text-underline-offset: 0.125rem; /* underline-offset-2 */
+}
+
+.allauth content a:hover {
+    color: #6366f1; /* text-indigo-500 */
+}
+
+.allauth form[action="/accounts/signup/"] ul {
+    display: none; /* hidden */
+}
+
+.allauth form[action="/accounts/signup/"] ul.errorlist {
+    display: block; /* block */
+}
+
+.allauth .helptext {
+    display: block; /* block */
+    margin-top: 1rem; /* mt-4 */
+}
+
+label {
+    display: none; /* hidden */
+}
+
+input[type=file] {
+    background-color: white; /* bg-white */
+    padding-left: 0; /* pl-0 */
+}
+
+.textarea, textarea, input {
+    width: 100%; /* w-full */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1rem 1.25rem; /* py-4 px-5 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+.errorlist li {
+    padding: 0.25rem 0.5rem; /* p-1 pl-4 */
+    border-left: 0.25rem solid #ef4444; /* border-l-red-500 border-l-4 */
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: #ef4444; /* text-red-500 */
+}
+
+label[for="id_remember"] {
+    display: inline-block; /* inline-block */
+    width: auto; /* w-auto */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+input[name="remember"] {
+    width: auto; /* w-auto */
+}
+
+.alert-info {
+    background-color: #bfdbfe; /* bg-blue-300 */
+}
+
+.alert-success {
+    background-color: #4ade80; /* bg-green-400 */
+}
+
+.alert-warning {
+    background-color: #facc15; /* bg-amber-400 */
+}
+
+.alert-danger {
+    background-color: #fbbf24; /* bg-amber-500 */
+}

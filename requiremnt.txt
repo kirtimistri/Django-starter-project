@@ -1,0 +1,5 @@
+Django 
+pillow( to upload images)
+django-cleanup( to clean or delete duplicate images)
+django-alauth ( for user authentication)
+django-htmx ( for htmx support)

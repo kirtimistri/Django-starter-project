@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit chat App</title>
+    <link rel="stylesheet" href="{% static 'chat.css' %}">
+    <link rel="stylesheet" href="/chatapp/static/chat.css">
+    <div class="wrapper">
+    
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+</head>
+<!-- project on hold becouse node js was used we can continue it with Django -->
+
+<body>
+    <nav>
+        <div class="navitem">
+            <img id="logo" src="{% static '/icon.jpg' %}" alt="#icon"> 
+            Chit Chat 
+        </div>
+        <div class="navitem2">
+            <span> Home</span>
+            <a href="{% url 'UserProfile' message.author.username %}">
+
+                <img src="{{ message.author.UserProfile.profile_picture }}" alt="">
+            </a>
+            <span>  Admin </span>
+        </div>
+    </nav>
+    <!-- <div class="shadow"> -->
+        <div class="container">
+            <!-- <img src="bg.jpg" alt=""> -->
+             {% for message in chat_messages %}
+             {% if massage.author == user %}
+             <div class="massage left">{{ message.body }}</div>
+             {% else %}
+            <div class="massage right">{{ message.body }}</div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    <div class="send">
+        <form action="#" id="send-container">
+            <input type="text" name="massegeinp" id="massegeinp">
+            <button class="btn" type="submit"><img src="{% static '/send.svg' %}" alt="#"></button>
+        </form>
+</body>
+
+</html>
