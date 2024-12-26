@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f$)qp13+u=ed4!xxd9ze9llh8ce36^ml83p3le(++lnw&*$pq5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','*']
 
@@ -72,8 +72,8 @@ ROOT_URLCONF = 'letschat.urls'
 
 TEMPLATES = [
     {
-         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "tamplates"],# Project-wide templates
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],# Project-wide templates
         'APP_DIRS': True,  # Enables Django to find app-specific templates
         'OPTIONS': {
             'context_processors': [

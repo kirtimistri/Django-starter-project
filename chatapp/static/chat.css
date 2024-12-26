@@ -1,16 +1,20 @@
-body{
-    /* background-color:rgb(2, 19, 49); */
-    background: linear-gradient(to top right,black,rgb(57, 5, 152),rgb(7, 103, 140),black);
-    /* justify-content: center; */
-    /* background-image: url('/bg.jpg'); */
-    /* background-color:rgb(21, 3, 77); */
+body {
+
+    background: linear-gradient(to top right, black, rgb(57, 5, 152), rgb(7, 103, 140), black);
+    justify-content: center;
+    height: 100vh;
+    /* Full viewport height */
+    width: 100vw;
+    /* Full viewport width */
     background-repeat: no-repeat;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-#logo{
+
+#logo {
     /* border: 2px solid yellow; */
     border-radius: 50%;
     display: block;
@@ -19,28 +23,31 @@ body{
     /* margin: auto; */
     width: 70px;
 }
-nav{
+
+nav {
     background-color: black;
     display: flex;
     justify-items: center;
     flex-direction: row;
-    gap:4em;
-    justify-content:space-around;
+    gap: 4em;
+    justify-content: space-around;
     align-items: center;
 }
-.navitem{
+
+.navitem {
     display: flex;
-    color:white;
+    color: white;
     align-items: center;
-    gap:3px;
+    gap: 3px;
     text-shadow: 0 0 20px blue;
     /* text-shadow: 0 0 6px #FF0000, 0 0 6px #0000FF; */
     /* text-shadow: 2px 2px 8px #FF0000; */
     font-size: 2em;
 }
-.navitem2{
+
+.navitem2 {
     display: flex;
-    color:white;
+    color: white;
     font-size: 2em;
     align-items: center;
     justify-content: center;
@@ -48,99 +55,184 @@ nav{
     gap: 25px;
     text-align: center;
 }
-.navitem2 h5{
+
+.online-count {
+    display: flex;
+    position: sticky;
+    top: 0;
 }
-.container{
+
+.container {
     border: 2px solid black;
     box-shadow: 1px 1px 20px 6px rgb(1, 1, 34);
     /* box-shadow:inset 1px 1px 10px 6px blue; */
-    background-color:black;
-    /* From https://css.glass */
+    background-color: black;
     border-radius: 40px;
     margin: auto;
-    width:120vh;
-    margin-top: 15px;
+    /* width: 60%; */
     overflow-y: auto;
+    padding: 0px 20px;
+    margin-top: 40px;
     height: 75vh;
+    width: 60%;
+    /* max-width: 65%; */
+
 }
-.shadow{
-box-shadow: 1px 1px 10px 5px black;
-border-radius: 2em;
-width:100vh;
-/* max-width: 1000px; */
-height: 65vh;
-margin: 3em;
+::-webkit-scrollbar {
+    width: 12px; /* Width of vertical scrollbar */
+    height: 12px; /* Height of horizontal scrollbar */
 }
+::-webkit-scrollbar-thumb {
+    background: #888;
+    transition: background 0.3s ease-in-out;
+    border-radius: 10px;
+}
+.shadow {
+    box-shadow: 1px 1px 10px 5px black;
+    border-radius: 2em;
+    width: 100vh;
+    /* max-width: 1000px; */
+    height: 65vh;
+    margin: 3em;
+}
+
 /* .container img{
     height:65vh;
     position: absolute;
     z-index: -1;
     max-width: 994px;
 } */
-.massage{
-background-color:white;
-color: white;
-box-shadow: inset 1px 1px 10px 5px rgb(10, 182, 240);
-border: 2px solid rgb(0, 0, 0);
-width: auto;
-height: auto;
-margin: 1.3rem;
-padding: 15px;
-/* font-family:'Times New Roman', Times, serif; */
-font-size:20px; 
-font-weight: bold;
-border-radius: 30px;
+.message {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 0px 10px;
+    height: auto;
+    overflow-wrap: break-word;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 30px;
+
 }
-.left{
-float: right;
-clear: both;
-background-color: rgb(24, 98, 188);
+
+.right {
+    float: right;
+    clear: both;
+    /* background-color: rgb(24, 98, 188); */
+    background-color: #007bff;
+    width: fit-content;
+    max-width: 700px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    /* Forces long words to break */
+    overflow-wrap: break-word;
+    /* Handles word breaking for all browsers */
+    white-space: normal;
+    /* Allows text to wrap onto the next line */
+    box-sizing: border-box;
+    /* Includes padding in the width calculation */
+    white-space: normal;
+    word-break: break-word;
+    /* For better browser support */
+    border-bottom-left-radius: 0;
 }
-.right{
+
+.parentright {
+    float: right;
+    clear: both;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.left {
     float: left;
     clear: both;
-    background-color: rgb(18, 18, 190);
+    background-color: rgb(114 22 196);
+    /* align-self: flex-end; */
+    width: fit-content;
+    max-width: 700px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    /* Forces long words to break */
+    overflow-wrap: break-word;
+    /* Handles word breaking for all browsers */
+    white-space: normal;
+    /* Allows text to wrap onto the next line */
+    box-sizing: border-box;
+    /* Includes padding in the width calculation */
+    white-space: normal;
+    word-break: break-word;
+    /* For better browser support */
+    margin-right: 40px;
+    border-bottom-right-radius: 0;
+
 }
-#send-container{
-    text-align: center;
-    display:flex;
- justify-content:space-around;
-    margin: auto;
-    max-width: 994px;
-    width: 100%;
-    margin-bottom: 15px;
-    gap: 20px;
+
+.parentleft {
+    float: left;
+    clear: both;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
 }
-#massegeinp{
-height: 35px;
-width: 95%;
-box-shadow: 1px 1px 10px 5px black;
-padding: 5px;
-border: 2px solid rgb(3, 3, 110);
-border-radius: 30px;
-margin: 30px 2px;
+
+.send {
+    display: flex;
+    justify-content: center;
+    /* gap: 4em; */
+    margin-bottom: 20px;
+
 }
-.btn{
-    height: 4em;
-    border-radius: 20%;
-    width: 6em;
-    cursor: pointer;
+
+#massegeinp {
+    height: 45px;
+    width: 95%;
+    /* box-shadow: 1px 1px 10px 5px black; */
+    padding: 5px;
     border: 2px solid rgb(3, 3, 110);
-    margin-top: 30px;
-    
+    border-radius: 30px;
+    margin: 30px 2px;
+}
+
+.btn {
+    height: 3.7em;
+    border-radius: 20%;
+    width: 4em;
+    cursor: pointer;
+    /* border: 2px solid rgb(3, 3, 110); */
+    margin-top: 32px;
+
     padding: 4px 10px;
-    background-color:rgb(2, 19, 49) ;
-    box-shadow: 1px 1px 10px 6px black;
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    /* background-color: rgb(2, 19, 49); */
+    /* box-shadow: 1px 1px 10px 6px black; */
+    border-radius: 0px 20px 20px 0px;
     color: white;
-} 
+}
+
+.insta-custom-search img {
+    /* background-color: red; */
+    /* border-radius: 100px; */
+}
+
 @media (max-width: 1000px) {
-    .container{
+    .container {
         width: 90vw;
     }
-    .shadow{
-width: 90vw;
+
+    .shadow {
+        width: 90vw;
     }
-    #send-container{
+
+    #send-container {
         width: 90vw;
         gap: 10px;
-    }}
+    }
+}

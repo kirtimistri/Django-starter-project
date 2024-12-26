@@ -1,0 +1,68 @@
+{% extends 'layouts/blank.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit chat App</title>
+    <link rel="stylesheet" href="{% static 'chat.css' %}">
+    <div class="wrapper">
+        <script src="https://unpkg.com/htmx.org@1.8.4"></script> <!-- Use HTMX version -->
+        <script src="https://unpkg.com/hyperscript.org@0.9.13"></script>
+</head>
+<!-- project on hold becouse node js was used we can continue it with Django -->
+
+<body>
+    <div class="container">
+        <div
+            class=" flex text-xl justify-center align-center text-white font-bold bg-black h-16 items-center sticky top-0 z-10">
+            <span id="online-count" class="pr-1">3</span> online
+        </div>
+        <div id="chat_messages">
+            {% for message in chat_messages reversed %}
+            {% include 'chatapp/chat_message.html' %}
+            {% endfor %}
+        </div>
+
+    </div>
+    <form action="{% url 'home' %}" id="chat_messages_form" class="send" hx-post="{% url 'home' %}"
+        hx-target="#chat_messages" hx-swap="beforeend" hx-trigger="submit" _="on htmx: afterRequest reset() me">
+        {% csrf_token %}
+        {{ form }}
+        <div class="insta-custom-search">
+            <button class="btn" type="submit"><img src="{% static 'send.jpg' %}" alt="#"></button>
+        </div>
+    </form>
+
+</html>
+{% endblock %}
+{% block javascript %}
+</body>
+<script>
+    // Function to scroll the container to the bottom
+   function scrollToBottom(){
+    const container = document.querySelector('.container')
+    if(container){
+        container.scrollTop=container.scrollHeight
+    }
+   };
+   // to scroll down when window is loded
+   window.onload=scrollToBottom;
+// play sound when message is sent
+   function playsound(){
+    const audio=new Audio("{% static 'send.mp3' %}");
+    audio.play();
+   };
+
+   const onsend = document.getElementById('chat_messages_form');
+   if (onsend){
+    onsend.addEventListener('submit',()=>{
+     playsound();
+    });
+    };
+
+</script>
+{% endblock %}
