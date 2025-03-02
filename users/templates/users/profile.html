@@ -10,6 +10,10 @@
         {% if profile.info %}
         <div class="mt-8 hyphens-auto">{{ profile.info|linebreaksbr }}</div>
         {% endif %}  
+        <!-- to prevent user to not make chat by itself -->
+        {% if profile.user != user %} 
+        <a  class="button" href="{% url 'start-chat' profile.user.username %}">Chat with me</a>
+        {% endif %}
     </div>
 </div>
 

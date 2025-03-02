@@ -1,0 +1,26 @@
+<!-- this is used to parse the div by htmx request  -->
+<span id="online-count" hx-swap-oob="outerHTML" class="pr-1"> {{ online_count|default:0 }}</span>
+{% if online_count %}
+<div id="online-icon" class="m-2 rounded-full bg-blue-500 p-1.5"></div>
+{% else %}
+<div id="online-icon" class="m-2 rounded-full bg-pink-500 p-1.5"></div>
+{% endif %}
+
+<ul class="flex gep-4" id="groupchat_members">
+    {% for member in chat_group.members.all %}
+    <li>
+        <a href="{% url 'profile' member.username %}"
+            class="flex flex-col text-gray-400 items-center justify-center w-20 gap-2 m-2">
+            <div class="relative">
+                 {% if member in chat_group.users_online.all %}
+                 <div id="online-icon" class="m-2 rounded-full bg-blue-500 p-1.5 absolute top-4 left-8 border-8 border-black p-4"></div>
+                 {% else %}
+                 <div id="online-icon" class="m-2 rounded-full bg-pink-500 p-1.5 absolute top-4 left-8 border-8 border-black p-4"></div>
+                 {% endif %}
+                <img src="{{ member.profile.avatar }}" class="w-14 h-14 rounded-full object-cover">
+            </div>
+            {{ member.profile.name|slice:":10" }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

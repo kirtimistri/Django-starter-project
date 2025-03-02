@@ -10,7 +10,22 @@ https://docs.djangoproject.com/en/5.0/howto/deployment/asgi/
 import os
 
 from django.core.asgi import get_asgi_application
+from channels.routing import ProtocolTypeRouter,URLRouter
+# inbuld security feature connactions are only accepted by the authenticated usersonly
+from channels.security.websocket import AllowedHostsOriginValidator
+# this is the django middle warehich gives access to only loged in user by using authantication
+
+from channels.auth import AuthMiddlewareStack
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'letschat.settings')
 
-application = get_asgi_application()
+django_asgi_app= get_asgi_application()
+from chatapp import routing
+application=ProtocolTypeRouter(
+    {
+        "http":django_asgi_app,
+        "websocket":AllowedHostsOriginValidator(
+            AuthMiddlewareStack(URLRouter(routing.websocket_urlpatterns))
+        ),
+    }
+)

@@ -1,6 +1,6 @@
 {% load static %}
 
-<header class="flex items-center justify-around bg-black h-24 px-8 text-white sticky top-0 z-40">
+<header class="flex items-center justify-around bg-black h-20 px-8 text-white sticky top-0 z-40">
    
     <div>
         <a class="flex items-center gap-2" href="/">
@@ -26,6 +26,7 @@
                     <ul class="hoverlist [&>li>a]:justify-end text-2xl">
                         <li><a href="{% url 'profile' %}">My Profile</a></li>
                         <li><a href="{% url 'profile-edit' %}">Edit Profile</a></li>
+                        <li><a href="{% url 'new-groupchat' %}">Create chat</a></li>
                         <li><a href="{% url 'profile-settings' %}">Settings</a></li>
                         <li><a href="{% url 'account_logout' %}">Log Out</a></li>
                     </ul>

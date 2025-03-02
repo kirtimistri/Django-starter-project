@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1','*']
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'chatapp.apps.ChatappConfig',
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
@@ -86,8 +87,21 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'letschat.wsgi.application'
-
+# WSGI_APPLICATION = 'letschat.wsgi.application'
+ASGI_APPLICATION = "letschat.asgi.application"
+CHANNEL_LAYERS={
+    'default':{
+        "BACKEND":"channels.layers.InMemoryChannelLayer",
+    }
+}
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
